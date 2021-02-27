@@ -1,0 +1,56 @@
+.login-form {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 400px;
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  border: 1px solid black;
+  padding: 15px;
+}
+
+
+div.text-inputs {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-form input[type="submit"] {
+  background: rgb(7, 108, 190);
+  color: white;
+}
+
+.login-form input {
+  height: 30px;
+  width: 100%;
+}
+
+.text-inputs input {
+  margin-bottom: 15px;
+  padding-left: 30px;
+}
+
+.text-inputs input:focus {
+  outline: 0;
+}
+
+.text-inputs > label {
+  position: relative;
+}
+
+label > i.fas {
+  position: absolute;
+  top: 25px;
+  left: 10px;
+}
+
+
+
+
+
+
+
