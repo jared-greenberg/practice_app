@@ -6,7 +6,7 @@ import configureStore from './store/store';
 document.addEventListener("DOMContentLoaded", () => {
   let saved = localStorage.myApp;
 
-  const store = configureStore(saved);
+  const store = configureStore();
   const root = document.getElementById('root');
 
   ReactDOM.render(<Root store={store}/>, root);
