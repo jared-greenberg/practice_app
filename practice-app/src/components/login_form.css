@@ -34,7 +34,7 @@ input[type="submit"]:disabled{
 }
 
 .text-inputs input {
-  margin-bottom: 15px;
+  margin-bottom: 25px;
   padding-left: 30px;
 }
 
@@ -52,8 +52,15 @@ label > i.fas {
   left: 10px;
 }
 
-input.valid {
+input.invalid {
   border: 1px solid pink;
+}
+
+p.error {
+  position: absolute;
+  color: red;
+  font-size: 12px;
+  top: 50px;
 }
 
 
