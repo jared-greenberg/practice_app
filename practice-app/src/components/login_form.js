@@ -10,12 +10,12 @@ const LoginForm = () => {
       <div className="text-inputs">
         <label> Email
           <input type="text" placeholder="user@rapptrlabs.com"/>
-          <i class="fas fa-user"></i>
+          <i className="fas fa-user"></i>
         </label>
 
         <label> Password
           <input type="password" placeholder="Must be at least 4 characters"/>
-          <i class="fas fa-lock"></i>
+          <i className="fas fa-lock"></i>
         </label>
       </div>
 
