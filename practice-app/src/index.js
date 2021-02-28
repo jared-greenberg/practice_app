@@ -5,7 +5,7 @@ import configureStore from './store/store';
 import {loginUser, logoutUser} from './actions/session_actions';
 
 document.addEventListener("DOMContentLoaded", () => {
-  let saved = localStorage.myApp;
+  
 
   const store = configureStore();
   const root = document.getElementById('root');

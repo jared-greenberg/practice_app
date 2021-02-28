@@ -1,11 +1,17 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+
 import './login_form.css';
 
 const LoginForm = () => {
 
-  return (
-    <form className="login-form">
+  let curr = useSelector((state) => state.session.email)
 
+
+  return (
+    
+    <form className="login-form">
+      <h2>{curr}</h2>
       <h1>Rapptr Labs</h1>
       <div className="text-inputs">
         <label> Email
