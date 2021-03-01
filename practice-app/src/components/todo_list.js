@@ -1,24 +1,25 @@
 import React, { useEffect, useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { addToDo } from '../actions/list_actions';
+import ToDoListItem from './todo_list_item';
 import './todo.css';
 
 
 const ToDoList = () => {
 
   const dispatch = useDispatch();
+  const listItems = useSelector((state) => Object.values(state.list))
 
   const [formOpen, toggleForm] = useState(false)
   const [newToDo, setNewToDo] = useState("");
 
   const handleSubmit = e => {
+    setNewToDo("");
     e.preventDefault();
     dispatch(addToDo(newToDo))
-    setNewToDo("");
   }
 
   const updateToDo = val => {
-    console.log(val)
     setNewToDo(val);
   }
 
@@ -34,11 +35,11 @@ const ToDoList = () => {
         </div>
       </section>
       <form onSubmit={handleSubmit}>
-          <input type="text" onChange={(e) => updateToDo(e.target.value)}/>
+          <input type="text" onChange={(e) => updateToDo(e.target.value)} value={newToDo}/>
           <input type="submit" value="Save"/>
       </form>
       <ul>
-        {}
+        {listItems.map(item => <ToDoListItem key={item} item={item}/>)}
       </ul>
     </main>
   )

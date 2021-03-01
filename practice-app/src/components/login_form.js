@@ -71,7 +71,8 @@ const LoginForm = () => {
       <div className="text-inputs">
         <label> Email
           <input className={email.length > 0 && !validEmail ? "invalid" : ""}
-                 type="text" 
+                 type="text"
+                 value={email} 
                  placeholder="user@rapptrlabs.com"
                  onChange={(e) => updateEmail(e.target.value)}
           />
@@ -83,6 +84,7 @@ const LoginForm = () => {
         <label> Password
           <input className={password.length > 0 && !validPassword ? "invalid" : ""}
                 type="password" 
+                value={password}
                 placeholder="Must be at least 4 characters"
                 onChange={(e) => updatePassword(e.target.value)}
           />
