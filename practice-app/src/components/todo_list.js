@@ -12,7 +12,7 @@ const ToDoList = () => {
 
       <section className="top-list">
         <div className="search-bar">
-          <input type="text"/>
+          <input type="text" placeholder="search"/>
           <i className="fas fa-search"></i>
         </div>
       </section>
