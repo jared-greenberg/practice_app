@@ -1,9 +1,26 @@
 import React, { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { addToDo } from '../actions/list_actions';
 import './todo.css';
+
 
 const ToDoList = () => {
 
+  const dispatch = useDispatch();
+
   const [formOpen, toggleForm] = useState(false)
+  const [newToDo, setNewToDo] = useState("");
+
+  const handleSubmit = e => {
+    e.preventDefault();
+    dispatch(addToDo(newToDo))
+    setNewToDo("");
+  }
+
+  const updateToDo = val => {
+    console.log(val)
+    setNewToDo(val);
+  }
 
   return (
     <main>
@@ -16,8 +33,8 @@ const ToDoList = () => {
           <i className="fas fa-search"></i>
         </div>
       </section>
-      <form>
-          <input type="text"/>
+      <form onSubmit={handleSubmit}>
+          <input type="text" onChange={(e) => updateToDo(e.target.value)}/>
           <input type="submit" value="Save"/>
       </form>
       <ul>
