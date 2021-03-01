@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { validate } from 'email-validator';
 import { loginUser } from '../actions/session_actions';
