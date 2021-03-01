@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { validate } from 'email-validator';
+import { loginUser } from '../actions/session_actions';
 
 import './login_form.css';
 
 const LoginForm = () => {
 
-  let curr = useSelector((state) => state.session.email)
+  const dispatch = useDispatch();
 
   const [email, setEmail] = useState("");
   const [validEmail, setValidEmail] = useState(false);
@@ -15,8 +16,6 @@ const LoginForm = () => {
   const [password, setPassword] = useState("");
   const [validPassword, setValidPassword] = useState(false);
   const [passwordError, setPasswordError] = useState("");
-
-  const [submissionError, setSubmissionError] = useState("");
 
   
   const updatePassword = (pwd) => {
@@ -61,13 +60,13 @@ const LoginForm = () => {
 
   const submitForm = (e) => {
     e.preventDefault();
-
+    dispatch(loginUser({email, password}))
   }
 
   
   return (
     
-    <form className="login-form">
+    <form className="login-form" onSubmit={submitForm}>
       <h1>Rapptr Labs</h1>
       <div className="text-inputs">
         <label> Email
@@ -94,7 +93,6 @@ const LoginForm = () => {
       </div>
 
       <input disabled={!validPassword || !validEmail} type="submit" value="Login"/>
-       <p className="error">{submissionError}</p>
 
 
     </form>
