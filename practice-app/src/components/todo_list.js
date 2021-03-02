@@ -1,46 +1,46 @@
-import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { addToDo } from '../actions/list_actions';
+import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
 import ToDoListItem from './todo_list_item';
+import ToDoForm from './todo_form';
 import './todo.css';
 
 
 const ToDoList = () => {
 
-  const dispatch = useDispatch();
+
   const listItems = useSelector((state) => Object.values(state.list))
 
-  const [formOpen, toggleForm] = useState(false)
-  const [newToDo, setNewToDo] = useState("");
+  const [search, updateSearch] = useState("");
+  const [newForm, toggleForm] = useState(false);
 
-  const handleSubmit = e => {
-    setNewToDo("");
-    e.preventDefault();
-    dispatch(addToDo(newToDo))
+  const openForm = () => {
+    toggleForm(true);
+    updateSearch("");
   }
 
-  const updateToDo = val => {
-    setNewToDo(val);
-  }
-
+  let filtered = listItems.filter(todo => todo.task.includes(search));
+  
   return (
     <main>
       <h1>My To-Do List</h1>
+
       <button id="logout-button">Logout</button>
 
-      <section className="top-list">
-        <div className="search-bar">
-          <input type="text" placeholder="search"/>
-          <i className="fas fa-search"></i>
-        </div>
-      </section>
-      <form onSubmit={handleSubmit}>
-          <input type="text" onChange={(e) => updateToDo(e.target.value)} value={newToDo}/>
-          <input type="submit" value="Save"/>
-      </form>
-      <ul>
-        {listItems.map(item => <ToDoListItem key={item} item={item}/>)}
-      </ul>
+      <div className="list-container">
+        <section className="top-list">
+          <header>
+            <div className="search-bar">
+              <input type="text" placeholder="search" value={search} onChange={(e) => updateSearch(e.target.value)}/>
+              <i className="fas fa-search"></i>
+            </div>
+            <button onClick={openForm}>New</button>
+          </header>
+          {newForm ? <ToDoForm hide={() => toggleForm(false)}/> : null}
+        </section>
+        <ul>
+          {filtered.map(item => <ToDoListItem key={item.idx} item={item}/>)}
+        </ul>
+      </div>
     </main>
   )
 

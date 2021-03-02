@@ -1,13 +1,19 @@
 export const ADD_TODO = 'ADD_TODO';
 export const REMOVE_TODO = 'REMOVE_TODO';
+export const EDIT_TODO = 'EDIT_TODO';
 
 
-export const addToDo = title => ({
+export const addToDo = task => ({
   type: ADD_TODO,
-  title
+  task
 })
 
-export const removeToDo = id => ({
+export const removeToDo = idx => ({
   type: REMOVE_TODO,
-  id
+  idx
+})
+
+export const editToDo = payload => ({
+  type: EDIT_TODO,
+  payload
 })

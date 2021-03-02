@@ -1,3 +1,5 @@
+import axios from 'axios';
+
 export const RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';
 export const LOGOUT_USER = 'LOGOUT_USER';
 
@@ -12,8 +14,9 @@ export const logoutUser = () => ({
 })
 
 export const loginUser = creds => dispatch => {
-   return fetch('http://dev.rapptrlabs.com/Tests/scripts/user-login.php', {
-     method: 'post',
-     body: JSON.stringify(creds)
-   }).then((msg) => console.log(msg));
+  
+    return axios.post('/login_user', {
+      "email": creds.email,
+      "password": creds.password
+    }).then(() => console.log("succes"), () => console.log("fail"))
 }

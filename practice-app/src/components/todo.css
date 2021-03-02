@@ -1,18 +1,34 @@
 main {
-  text-align: center;
+  width: 300px;
+  margin: 0 auto;
   position: relative;
+  text-align: center;
+}
+
+form.todo-form {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 }
 
 button#logout-button {
   position: absolute;
   top: 10px;
-  right: 200px;
+  right: 0;
+}
+
+section.top-list {
+  padding: 10px; 
+}
+
+section.top-list > header{
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 10px;
 }
 
 div.search-bar {
   position: relative;
-  width: 300px;
-  margin: 0 auto;
 }
 
 div.search-bar > input {
@@ -25,6 +41,28 @@ div.search-bar > input {
 
 div.search-bar > i {
   position: absolute;
-  left: 80px;
+  left: 5px;
   top: 5px;
+}
+
+div.list-container {
+  border: 1px solid black;
+  height: 500px;
+  overflow-y: auto;
+}
+
+li {
+  padding: 10px;
+}
+
+li.todo-item {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+div.list-buttons > i{
+  margin-left: 10px;
+  cursor: pointer;
 }
