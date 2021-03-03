@@ -60,8 +60,18 @@ p.error {
   position: absolute;
   color: red;
   font-size: 12px;
+}
+
+p.input-error{
   top: 50px;
 }
+
+p.session-error{
+  bottom: 30px;
+}
+
+
+
 
 
 

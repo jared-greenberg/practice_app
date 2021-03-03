@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { validate } from 'email-validator';
-import { loginUser } from '../actions/session_actions';
+import { loginUser, clearSessionError } from '../actions/session_actions';
 
 import './login_form.css';
 
@@ -17,8 +17,12 @@ const LoginForm = () => {
   const [validPassword, setValidPassword] = useState(false);
   const [passwordError, setPasswordError] = useState("");
 
+  const sessionError = useSelector((state) => state.sessionError)
+
   
   const updatePassword = (pwd) => {
+    dispatch(clearSessionError())
+
     if (pwd.length > 16) return;
     
     setPassword(pwd);
@@ -39,6 +43,7 @@ const LoginForm = () => {
   }
 
   const updateEmail = (eml) => {
+    dispatch(clearSessionError())
     if (eml.length > 50) return;
 
     setEmail(eml);
@@ -77,7 +82,7 @@ const LoginForm = () => {
                  onChange={(e) => updateEmail(e.target.value)}
           />
           <i className="fas fa-user"></i>
-          <p className="error">{emailError}</p>
+          <p className="error input-error">{emailError}</p>
         </label>
 
 
@@ -89,12 +94,13 @@ const LoginForm = () => {
                 onChange={(e) => updatePassword(e.target.value)}
           />
           <i className="fas fa-lock"></i>
-          <p className="error">{passwordError}</p>
+          <p className="error input-error">{passwordError}</p>
         </label>
 
       </div>
 
       <input disabled={!validPassword || !validEmail} type="submit" value="Login"/>
+      <p className="error session-error">{sessionError}</p>
 
 
     </form>
