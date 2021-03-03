@@ -14,4 +14,5 @@ March 3 - I decided to hard program logging in because I couldn't figure out how
 
 Thanks for taking the time to review my work. I spent a good amount of time on that API request and would love some feedback if possible about which "required params" I was missing. Thank you for your consideration!
 
-- Jared Greenberg
+
+Jared Greenberg
