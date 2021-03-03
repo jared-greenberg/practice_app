@@ -5,7 +5,7 @@ import { useDispatch } from 'react-redux';
 const ToDoForm = ({idx, hide, val}) => {
   
   const [task, setTask] = useState(val || "");
-  const [validTask, updateValidity] = useState(false);
+  const [validTask, updateValidity] = useState(!!val);
   const dispatch = useDispatch();
 
   const handleSubmit = e => {
@@ -25,7 +25,7 @@ const ToDoForm = ({idx, hide, val}) => {
     if (tsk.length === 26) {
       return;
     }
-    else if (tsk.length === 1){
+    else if (tsk.length >= 1){
       updateValidity(true);
     }
     else if (tsk.length === 0) {
@@ -34,6 +34,7 @@ const ToDoForm = ({idx, hide, val}) => {
 
     setTask(tsk);
   }
+
 
   return (
     <form className="todo-form" onSubmit={handleSubmit}>

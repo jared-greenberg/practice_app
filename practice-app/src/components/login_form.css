@@ -3,8 +3,8 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  height: 400px;
-  width: 250px;
+  height: 450px;
+  width: 300px;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -31,6 +31,7 @@ div.text-inputs {
 
 .text-inputs input {
   margin-bottom: 25px;
+  margin-top: 5px;
   padding-left: 30px;
 }
 
@@ -44,7 +45,7 @@ div.text-inputs {
 
 label > i.fas {
   position: absolute;
-  top: 25px;
+  top: 30px;
   left: 10px;
 }
 
@@ -55,15 +56,15 @@ input.invalid {
 p.error {
   position: absolute;
   color: red;
-  font-size: 12px;
+  font-size: 14px;
 }
 
 p.input-error{
-  top: 50px;
+  top: 55px;
 }
 
 p.session-error{
-  bottom: 30px;
+  bottom: 45px;
 }
 
 

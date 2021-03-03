@@ -26,28 +26,31 @@ const LoginForm = () => {
     if (pwd.length > 16) return;
     
     setPassword(pwd);
-    if (pwd.length >= 4) {
-      setValidPassword(true);
-    }
-    else if (validPassword) {
-      setValidPassword(false);
-    }
 
-    if (pwd.length === 0 || pwd.length >= 4) {
+    if (pwd.length === 0) {
+      setValidPassword(false);
       setPasswordError("");
     }
-    else {
-      setPasswordError("Not enough characters")
+    else if (pwd.length < 4) {
+      setValidPassword(false);
+      setPasswordError("Not enough characters.")
     }
-   
+    else {
+      setValidPassword(true);
+      setPasswordError("");
+    }
+
+      
   }
+   
+  
 
   const updateEmail = (eml) => {
     if (sessionError) dispatch(clearSessionError())
+    
     if (eml.length > 50) return;
 
     setEmail(eml);
-    
     
     if (validate(eml)) {
       setValidEmail(true)
@@ -79,8 +82,7 @@ const LoginForm = () => {
                  type="text"
                  value={email} 
                  placeholder="user@rapptrlabs.com"
-                 onChange={(e) => updateEmail(e.target.value)}
-          />
+                 onChange={(e) => updateEmail(e.target.value)} />
           <i className="fas fa-user"></i>
           <p className="error input-error">{emailError}</p>
         </label>
@@ -91,8 +93,7 @@ const LoginForm = () => {
                 type="password" 
                 value={password}
                 placeholder="Must be at least 4 characters"
-                onChange={(e) => updatePassword(e.target.value)}
-          />
+                onChange={(e) => updatePassword(e.target.value)} />
           <i className="fas fa-lock"></i>
           <p className="error input-error">{passwordError}</p>
         </label>

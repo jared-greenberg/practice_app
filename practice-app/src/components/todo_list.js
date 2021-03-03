@@ -37,7 +37,7 @@ const ToDoList = () => {
               <input type="text" placeholder="search" value={search} onChange={(e) => updateSearch(e.target.value)}/>
               <i className="fas fa-search"></i>
             </div>
-            <button onClick={openForm}>New</button>
+            <button id="new-todo" onClick={openForm}>New</button>
           </header>
           {newForm ? <ToDoForm hide={() => toggleForm(false)}/> : null}
         </section>

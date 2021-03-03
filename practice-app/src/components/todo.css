@@ -20,6 +20,11 @@ button#logout-button {
   position: absolute;
   top: 20px;
   right: -25px;
+  background: rgb(223, 86, 86);
+  border: 1px solid black;
+  border-radius: 15px;
+  width: 60px;
+  height: 20px;
 }
 
 section.top-list > form.todo-form{
@@ -82,7 +87,7 @@ div.list-buttons > i{
   cursor: pointer;
 }
 
-.todo-form input[type="submit"] {
+.todo-form input[type="submit"], button#new-todo {
   background: rgb(7, 108, 190);
   color: white;
   width: 60px;

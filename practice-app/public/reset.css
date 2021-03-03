@@ -11,3 +11,9 @@ input:focus {
 input[type="submit"]:disabled {
   opacity: 0.5;
 }
+
+h1#error-404{
+  margin-top: 50px;
+  text-align: center;
+}
+
