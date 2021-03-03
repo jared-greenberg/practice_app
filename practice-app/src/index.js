@@ -7,16 +7,12 @@ import {addToDo, removeToDo} from './actions/list_actions';
 
 document.addEventListener("DOMContentLoaded", () => {
   
+  let previous = localStorage.getItem('state');
+  let state = previous ? JSON.parse(previous) : null;
 
-  const store = configureStore();
+  const store = configureStore(state);
   const root = document.getElementById('root');
   
-  window.getState = store.getState;
-  window.dispatch = store.dispatch;
-  window.loginUser = loginUser;
-  window.logoutUser = logoutUser;
-  window.addToDo = addToDo;
-  window.removeToDo = removeToDo;
 
   ReactDOM.render(<Root store={store}/>, root);
 

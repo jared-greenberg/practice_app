@@ -19,9 +19,11 @@ export default () => {
                   {loggedin ? <ToDoList/> : <Redirect to="/login"/>}
               </Route>
 
-              <Route path="/">
-                  {loggedin ? <NotFoundComponent /> : <Redirect to="/login"/>}
+              <Route exact path="/">
+                  {loggedin ? <Redirect to="/todo" /> : <Redirect to="/login"/>}
               </Route>
+
+              <Route path="/" component={NotFoundComponent}/>
           </Switch>
       )
 }
