@@ -18,7 +18,9 @@ const ToDoList = () => {
     updateSearch("");
   }
 
-  let filtered = listItems.filter(todo => todo.task.includes(search));
+  let filtered = listItems.filter(todo => {
+    return todo.task.toLowerCase().includes(search.toLowerCase())
+  });
   
   return (
     <main>

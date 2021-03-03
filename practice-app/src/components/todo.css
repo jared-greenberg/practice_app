@@ -17,14 +17,16 @@ button#logout-button {
   right: 0;
 }
 
-section.top-list {
-  padding: 10px; 
+section.top-list > form.todo-form{
+  padding: 10px;
+  border-bottom: 1px solid black;
 }
 
 section.top-list > header{
   display: flex;
   justify-content: space-around;
-  margin-bottom: 10px;
+  padding: 10px;
+  border-bottom: 1px solid black;
 }
 
 div.search-bar {
@@ -49,16 +51,17 @@ div.list-container {
   border: 1px solid black;
   height: 500px;
   overflow-y: auto;
+  background: #bbb;
 }
 
 li {
   padding: 10px;
 }
 
+
 li.todo-item {
   display: flex;
   justify-content: space-between;
-  border-top: 1px solid black;
   border-bottom: 1px solid black;
 }
 

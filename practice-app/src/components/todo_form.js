@@ -9,8 +9,12 @@ const ToDoForm = ({idx, hide, val}) => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    if (idx){
+
+    if (task.length === 0 || task.length === 26) {
+      return
+    }
     
+    if (idx){
       dispatch(editToDo({idx, task}))
     }
     else {

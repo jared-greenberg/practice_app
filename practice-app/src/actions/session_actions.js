@@ -14,9 +14,15 @@ export const logoutUser = () => ({
 })
 
 export const loginUser = creds => dispatch => {
-  
-    return axios.post('/login_user', {
-      "email": creds.email,
-      "password": creds.password
-    }).then(() => console.log("succes"), () => console.log("fail"))
+    
+
+    /* Note: I was getting a cors error, which I tried to eliminate by using a proxy server */
+
+    // fetch('https://thingproxy.freeboard.io/fetch/http://dev.rapptrlabs.com/Tests/scripts/user-login.php', {
+    //   body: {
+    //     "email": creds.email,
+    //     "password": creds.password
+    //   },
+    //   method: 'POST'
+    // }).then(() => console.log("success"), () => console.log("fail"))
 }
