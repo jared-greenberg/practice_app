@@ -33,9 +33,11 @@ export const loginUser = creds => dispatch => {
     if (creds.email === user.email && creds.password === user.password) {
       dispatch(receiveCurrentUser(creds.email))
       dispatch(clearSessionError())
+      return true
     }
     else {
       dispatch(receiveSessionError("Incorrect email or password"))
+      return false
     }
 
     /* Note: I was getting a cors error, which I tried to eliminate by using a proxy server. I'm finally able to
