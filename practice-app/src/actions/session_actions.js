@@ -26,7 +26,7 @@ export const clearSessionError = () => ({
 export const loginUser = creds => dispatch => {
     
     let user = {
-      email: "test@rapptrlabs.gmail.com",
+      email: "test@rapptrlabs.com",
       password: 'Test123'
     }
 

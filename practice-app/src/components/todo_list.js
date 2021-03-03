@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { logoutUser } from '../actions/session_actions';
 import ToDoListItem from './todo_list_item';
 import ToDoForm from './todo_form';
 import './todo.css';
@@ -9,7 +10,8 @@ const ToDoList = () => {
 
 
   const listItems = useSelector((state) => Object.values(state.list))
-
+  const dispatch = useDispatch();
+  
   const [search, updateSearch] = useState("");
   const [newForm, toggleForm] = useState(false);
 
@@ -26,7 +28,7 @@ const ToDoList = () => {
     <main>
       <h1>My To-Do List</h1>
 
-      <button id="logout-button">Logout</button>
+      <button id="logout-button" onClick={() => dispatch(logoutUser())}>Logout</button>
 
       <div className="list-container">
         <section className="top-list">

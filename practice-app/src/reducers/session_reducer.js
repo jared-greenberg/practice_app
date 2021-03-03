@@ -4,7 +4,7 @@ const sessionReducer = (state = {}, action) => {
   switch (action.type) {
     case RECEIVE_CURRENT_USER: 
       localStorage.setItem("appCurrentUser", JSON.stringify(action.currentUser));
-      return action.currentUser
+      return {email: action.currentUser}
     case LOGOUT_USER:
       localStorage.removeItem("appCurrentUser");
       return {};
