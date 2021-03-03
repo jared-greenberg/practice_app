@@ -12,7 +12,7 @@ March 1 and 2 - I intermittently implemented the CRUD functionality for the ToDo
 
 March 3 - I decided to hard program logging in because I couldn't figure out how to connect to the API. I added a failed login error and created middleware so that the state would always be persisted in local storage for subsequent visits to the site (note: this includes staying logged in). I also made protected routes so that you can only access the ToDo page if you're logged in, will be sent to the login page if you are not logged in, and will be given a 404 error if you are logged in an try to visit a page that doesn't exist. Finally I put a few touches to make sure some of the code was cleaner and DRYER. I spent about 2 hours today. 
 
-Thanks for taking the time to review my work. I spent a good amount of time on that API request and would love some feedback if possible about which "required params" I was missing. Thank you for your consideration!
+Overall it was about 6 hours, but I did spend about 2 hours of that trying to troubleshoot the API. If possible, I would love some feedback about the "required params" that I might have been missing.  Thanks for taking the time to review my work.  Thank you for your consideration!
 
 
 Jared Greenberg
