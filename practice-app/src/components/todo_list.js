@@ -26,7 +26,7 @@ const ToDoList = () => {
   
   return (
     <main>
-      <h1>My To-Do List</h1>
+      <h1 className="todo-title">My To-Do List</h1>
 
       <button id="logout-button" onClick={() => dispatch(logoutUser())}>Logout</button>
 

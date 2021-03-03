@@ -4,7 +4,7 @@ const listReducer = (state = {}, action) => {
   let dupState = {...state}
   switch(action.type) {
     case ADD_TODO:
-      let idx = Object.entries(dupState).length + 1;
+      let idx = Math.max(...Object.keys(state)) + 1;
       dupState[idx] = {idx, task: action.task};
       return dupState;
     case REMOVE_TODO:

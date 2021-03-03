@@ -1,8 +1,13 @@
 main {
-  width: 400px;
+  padding: 20px;
+  width: 300px;
   margin: 0 auto;
-  position: relative;
   text-align: center;
+  position: relative;
+}
+
+h1.todo-title {
+  font-size: 30px;
 }
 
 form.todo-form {
@@ -13,8 +18,8 @@ form.todo-form {
 
 button#logout-button {
   position: absolute;
-  top: 10px;
-  right: -100px;
+  top: 20px;
+  right: -25px;
 }
 
 section.top-list > form.todo-form{
@@ -50,9 +55,9 @@ div.search-bar > i {
 
 div.list-container {
   border: 1px solid black;
-  height: 500px;
+  height: 400px;
   overflow-y: auto;
-  margin-top: 50px;
+  margin-top: 30px;
 }
 
 li {
@@ -62,11 +67,25 @@ li {
 
 li.todo-item {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   border-bottom: 1px solid black;
 }
+
+li.todo-item > p {
+  width: 150px;
+  text-align: left;
+}
+
 
 div.list-buttons > i{
   margin-left: 10px;
   cursor: pointer;
 }
+
+.todo-form input[type="submit"] {
+  background: rgb(7, 108, 190);
+  color: white;
+  width: 60px;
+}
+
+

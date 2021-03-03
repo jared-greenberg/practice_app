@@ -24,10 +24,6 @@ div.text-inputs {
   color: white;
 }
 
-input[type="submit"]:disabled{
-  background: rgb(7, 108, 190, 0.5);
-}
-
 .login-form input {
   height: 30px;
   width: 100%;

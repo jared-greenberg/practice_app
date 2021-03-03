@@ -4,16 +4,13 @@ import { useDispatch } from 'react-redux';
 
 const ToDoForm = ({idx, hide, val}) => {
   
-  const [task, updateTask] = useState(val || "");
+  const [task, setTask] = useState(val || "");
+  const [validTask, updateValidity] = useState(false);
   const dispatch = useDispatch();
 
   const handleSubmit = e => {
     e.preventDefault();
 
-    if (task.length === 0 || task.length === 26) {
-      return
-    }
-    
     if (idx){
       dispatch(editToDo({idx, task}))
     }
@@ -24,10 +21,24 @@ const ToDoForm = ({idx, hide, val}) => {
     updateTask("");
   }
 
+  const updateTask = tsk => {
+    if (tsk.length === 26) {
+      return;
+    }
+    else if (tsk.length === 1){
+      updateValidity(true);
+    }
+    else if (tsk.length === 0) {
+      updateValidity(false);
+    }
+
+    setTask(tsk);
+  }
+
   return (
     <form className="todo-form" onSubmit={handleSubmit}>
       <input type="text" onChange={(e) => updateTask(e.target.value)} value={task}/>
-      <input type="submit" value="Save"/>
+      <input type="submit" disabled={!validTask} value="Save"/>
     </form>
   )
 }
