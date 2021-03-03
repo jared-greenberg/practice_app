@@ -21,7 +21,7 @@ const LoginForm = () => {
 
   
   const updatePassword = (pwd) => {
-    dispatch(clearSessionError())
+    if (sessionError) dispatch(clearSessionError())
 
     if (pwd.length > 16) return;
     
@@ -43,7 +43,7 @@ const LoginForm = () => {
   }
 
   const updateEmail = (eml) => {
-    dispatch(clearSessionError())
+    if (sessionError) dispatch(clearSessionError())
     if (eml.length > 50) return;
 
     setEmail(eml);

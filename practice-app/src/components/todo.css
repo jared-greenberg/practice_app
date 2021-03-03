@@ -1,5 +1,5 @@
 main {
-  width: 300px;
+  width: 400px;
   margin: 0 auto;
   position: relative;
   text-align: center;
@@ -7,14 +7,14 @@ main {
 
 form.todo-form {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   width: 100%;
 }
 
 button#logout-button {
   position: absolute;
   top: 10px;
-  right: 0;
+  right: -100px;
 }
 
 section.top-list > form.todo-form{
@@ -27,6 +27,7 @@ section.top-list > header{
   justify-content: space-around;
   padding: 10px;
   border-bottom: 1px solid black;
+  background: grey;
 }
 
 div.search-bar {
@@ -51,7 +52,7 @@ div.list-container {
   border: 1px solid black;
   height: 500px;
   overflow-y: auto;
-  background: #bbb;
+  margin-top: 50px;
 }
 
 li {
